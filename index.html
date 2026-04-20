@@ -122,7 +122,11 @@
   }
 
   /* ─── HERO TEXT ─── */
-  .hero-content { position: relative; z-index: 1; }
+  .hero-content { position: relative; z-index: 2; }
+
+  /* bubbles/animals in hero sit behind clouds too */
+  .hero .bubble,
+  .hero .float-animal { z-index: 1; }
 
   .hero h1 {
     font-size: clamp(28px, 6vw, 48px);
@@ -488,30 +492,57 @@
   }
 
   .btn-group {
-    margin-top: 20px;
+    margin-top: 24px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 14px;
   }
 
   .btn {
-    display: inline-block;
-    padding: 10px 22px;
-    border-radius: 25px;
-    background: #42a5f5;
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 50px;
     text-decoration: none;
     font-family: 'Noto Sans Gujarati', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    transition: background 0.2s, transform 0.2s;
+    font-size: 15px;
+    font-weight: 700;
+    transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
     white-space: nowrap;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
   }
 
   .btn:hover {
-    background: #1e88e5;
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+    filter: brightness(1.08);
+  }
+
+  .btn svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  /* YouTube — red */
+  .btn-yt {
+    background: #ff0000;
+    color: white;
+  }
+
+  /* Instagram — gradient */
+  .btn-ig {
+    background: linear-gradient(135deg, #f58529 0%, #dd2a7b 40%, #8134af 70%, #515bd4 100%);
+    color: white;
+  }
+
+  /* WhatsApp — green */
+  .btn-wa {
+    background: #25d366;
+    color: white;
   }
 
   /* ─── MOBILE TWEAKS ─── */
@@ -558,6 +589,29 @@
     <div class="cloud cloud2"></div>
     <div class="cloud cloud3"></div>
   </div>
+
+  <!-- Hero Bubbles -->
+  <div class="bubble" style="width:16px;height:16px;left:6%;bottom:8%;animation-duration:7s;animation-delay:0s;"></div>
+  <div class="bubble" style="width:24px;height:24px;left:14%;bottom:5%;animation-duration:9s;animation-delay:1.2s;"></div>
+  <div class="bubble" style="width:12px;height:12px;left:28%;bottom:12%;animation-duration:6s;animation-delay:0.5s;"></div>
+  <div class="bubble" style="width:20px;height:20px;left:42%;bottom:6%;animation-duration:8s;animation-delay:2s;"></div>
+  <div class="bubble" style="width:10px;height:10px;left:57%;bottom:10%;animation-duration:5.5s;animation-delay:0.3s;"></div>
+  <div class="bubble" style="width:28px;height:28px;left:70%;bottom:5%;animation-duration:10s;animation-delay:1.5s;"></div>
+  <div class="bubble" style="width:14px;height:14px;left:82%;bottom:14%;animation-duration:7.5s;animation-delay:3s;"></div>
+  <div class="bubble" style="width:18px;height:18px;left:91%;bottom:8%;animation-duration:8.5s;animation-delay:0.8s;"></div>
+  <div class="bubble" style="width:22px;height:22px;left:3%;bottom:25%;animation-duration:9.5s;animation-delay:2.5s;"></div>
+  <div class="bubble" style="width:11px;height:11px;left:96%;bottom:20%;animation-duration:6.5s;animation-delay:1.8s;"></div>
+
+  <!-- Hero Floating Animals -->
+  <div class="float-animal" style="left:2%;top:15%;animation-duration:4s;animation-delay:0s;">🦋</div>
+  <div class="float-animal" style="left:7%;top:65%;animation-duration:5s;animation-delay:1s;">🐦</div>
+  <div class="float-animal" style="left:88%;top:18%;animation-duration:4.5s;animation-delay:0.5s;">🐝</div>
+  <div class="float-animal" style="left:93%;top:58%;animation-duration:6s;animation-delay:2s;">🦜</div>
+  <div class="float-animal" style="left:18%;top:78%;animation-duration:5.5s;animation-delay:1.5s;font-size:22px;">🌸</div>
+  <div class="float-animal" style="left:75%;top:72%;animation-duration:4.8s;animation-delay:0.8s;font-size:20px;">🌼</div>
+  <div class="float-animal" style="left:45%;top:8%;animation-duration:5s;animation-delay:3s;font-size:20px;">⭐</div>
+  <div class="float-animal" style="left:60%;top:80%;animation-duration:4.2s;animation-delay:2.2s;">🐞</div>
+  <div class="float-animal" style="left:33%;top:10%;animation-duration:6s;animation-delay:0.3s;font-size:22px;">🌺</div>
 
   <div class="hero-content">
     <h1>ૐ પ્લે હાઉસ</h1>
@@ -613,7 +667,7 @@
         <span class="tag">📚 પાયાનું શિક્ષણ</span>
         <span class="tag">❤️ પ્રેમાળ વાતાવરણ</span>
         <span class="tag">🎨 એક્ટિવિટી</span>
-        <span class="tag">📺 ઓડિયો વિડિઓ</span>
+        <span class="tag">⚽ રમત-ગમત</span>
         <span class="tag">🎉 તહેવાર ઉજવણી</span>
         <span class="tag">🧠 સર્વાંગી વિકાસ</span>
       </div>
@@ -662,7 +716,7 @@
     <div class="feature"><span class="icon">🎓</span>મજબૂત શિક્ષણ</div>
     <div class="feature"><span class="icon">❤️</span>પ્રેમાળ વાતાવરણ</div>
     <div class="feature"><span class="icon">🎨</span>પ્રવૃત્તિ આધારિત શીખણ</div>
-    <div class="feature"><span class="icon">📺</span>ઓડિયો વિડિઓ</div>
+    <div class="feature"><span class="icon">⚽</span>રમત-ગમત</div>
     <div class="feature"><span class="icon">🎉</span>તહેવાર ઉજવણી</div>
     <div class="feature"><span class="icon">🧠</span>સર્વાંગી વિકાસ</div>
   </div>
@@ -772,9 +826,31 @@
   <p>⏰ 8:30 થી 12:00 &nbsp;|&nbsp; 📞 8264639705</p>
 
   <div class="btn-group">
-    <a href="https://www.youtube.com/@omplayhouseactivities" class="btn">▶ YouTube</a>
-    <a href="https://instagram.com/omplayhouse_2015" class="btn">📸 Instagram</a>
-    <a href="https://wa.me/918264639705" class="btn">💬 WhatsApp</a>
+
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@omplayhouseactivities" class="btn btn-yt" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+      </svg>
+      YouTube
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://instagram.com/omplayhouse_2015" class="btn btn-ig" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4a4.4 4.4 0 0 1 1.6 1 4.4 4.4 0 0 1 1 1.6c.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2a4.4 4.4 0 0 1-1 1.6 4.4 4.4 0 0 1-1.6 1c-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4a4.4 4.4 0 0 1-1.6-1 4.4 4.4 0 0 1-1-1.6c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2a4.4 4.4 0 0 1 1-1.6 4.4 4.4 0 0 1 1.6-1c.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.7.4 3.9.7A6.6 6.6 0 0 0 1.5 2.3 6.6 6.6 0 0 0 .3 4.7C0 5.5-.1 6.5 0 7.8-.1 9.1 0 9.5 0 12s0 2.9.1 4.2c0 1.3.3 2.3.6 3.1a6.6 6.6 0 0 0 1.6 2.4 6.6 6.6 0 0 0 2.4 1.6c.8.3 1.8.5 3.1.6C9.1 24 9.5 24 12 24s2.9 0 4.2-.1c1.3 0 2.3-.3 3.1-.6a6.6 6.6 0 0 0 2.4-1.6 6.6 6.6 0 0 0 1.6-2.4c.3-.8.5-1.8.6-3.1.1-1.3.1-1.7.1-4.2s0-2.9-.1-4.2c0-1.3-.3-2.3-.6-3.1A6.6 6.6 0 0 0 21.7.7C20.9.4 19.9.1 18.6.1 17.3 0 16.9 0 14.4 0h-2.4zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
+      </svg>
+      Instagram
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/918264639705" class="btn btn-wa" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.5 14.4c-.3-.1-1.7-.8-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1a7.8 7.8 0 0 1-2.3-1.4 8.6 8.6 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.3-.5.1-.5-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4A3.6 3.6 0 0 0 7 10c0 2.1 1.5 4.1 1.7 4.4.2.3 3 4.5 7.2 6.3a8.6 8.6 0 0 0 2.4.6c1 .1 1.9 0 2.6-.3.8-.4 1.5-1.3 1.7-2.5.2-.7.2-1.4.1-1.8-.1-.2-.3-.3-.7-.4zM12 21.8A9.8 9.8 0 0 1 6.7 20L2 21.2l1.2-4.5A9.9 9.9 0 1 1 12 21.8zm0-21.8C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.6 5.8L0 24l6.4-1.7A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12S18.6 0 12 0z"/>
+      </svg>
+      WhatsApp
+    </a>
+
   </div>
 </footer>
 
